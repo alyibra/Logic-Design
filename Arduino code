@@ -1,0 +1,33 @@
+int A = 2;
+int B = 3;
+int C = 4;
+int D = 5;
+int E = 7;
+
+int LED = 13;  
+
+void setup() {
+  pinMode(A, INPUT);
+  pinMode(B, INPUT);
+  pinMode(C, INPUT);
+  pinMode(D, INPUT);
+  pinMode(E, INPUT);
+
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  int count = 0;
+
+  if (digitalRead(A) == HIGH) count++;
+  if (digitalRead(B) == HIGH) count++;
+  if (digitalRead(C) == HIGH) count++;
+  if (digitalRead(D) == HIGH) count++;
+  if (digitalRead(E) == HIGH) count++;
+
+  if (count >= 3) {
+    digitalWrite(LED, HIGH);  
+  } else {
+    digitalWrite(LED, LOW);   
+  }
+}
